@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html>
+<head>
+    <title>Login page</title>
+    <link href="/css/login.css" rel="stylesheet">
+    <link href="/css/introHCI.css" rel="stylesheet">
+    {{> header}}
+ 
+
+</head>
+<body>
+<div class="container">
+    <div style="height: 10px;/* margin-top: -22.5px; */background-color: TRANSPARENT;padding-top: 22.5px;"><br></div>
+    <h2 id="notecast" style="margin-bottom: 0px">NotesCast</h2>
+</div>
+
+<div class="container">
+    <p id="welcome_login">Welcome back to podcasts with smartnotes!</p>
+    <img src="/images/login_icon.png" class="center" width="20%">
+    <h3 id="login_sub" style="margin-top:0px"><b>Login</b></h3>
+</div>
+<div class="container">
+    <!--start of the login form-->
+<!--    <form action="/home" method="get" id="loginForm">-->
+        <form action="/home" method="get" id="loginForm">
+
+        <div class="container">
+            <label class="label_style" for="uname">Username</label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <label class="label_style" for="psw">Password</label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <a href="#">Forgot password?</a></p>
+            <div style="height:10px;"><br></div>
+
+            <button id="loginButton" type="submit" >Login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+            <div style="height:20px;"><br></div>
+
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+            </fb:login-button>
+
+            <div style="height:10px;"><br></div>
+            <p>Don't have an account? <a href="/signup">Sign up now.</a></p>
+        </div>
+    </form>
+    <!--end of the login form-->
+</div>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Course</title> 
+    <link href="/css/course.css" rel="stylesheet"> 
+    <link href="/css/introHCI.css" rel="stylesheet">
+   {{> header}}
+
+
+</head>
+<body style="background-color: aliceblue">
+<div id="courseBody">
+    <div class="container coursePage">
+<!--        <a id="backbutton" onclick="goBack()"> < Back</a>-->
+        {{> user}}
+    </div>
+
+    <div style=" height: 10px;margin-top: -22.5px;background-color: aliceblue;padding-top: 22.5px;"><br></div>
+
+    <div class="jumbotron" style="background-color: aliceblue;margin: 30px 30px 0px;">
+        <p class="course_title">{{courseName}}</p>
+    </div>
+    <div>
+        {{#each weeks}}
+            <div class="dropdown">
+                <button onclick="dropdown(`{{id}}`)" class="dropbtn">{{name}}</button>
+                <div class="dropdown-content" id={{id}}>
+                    <a href="{{name}}/{{lecture1}}/{{prof}}" class="lectures">{{lecture1}}</a><br>
+                    <a href="{{name}}/{{lecture2}}/{{prof}}" class="lectures">{{lecture2}}</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    <br>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/index.js"></script>
+
+</body>
+</html>

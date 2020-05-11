@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html>
+<head>
+    <title>HCI Project Portfolio</title>
+    <link href="/css/introHCI.css" rel="stylesheet">
+    <link href="/css/home.css" rel="stylesheet">
+
+    {{> header}}
+
+</head>
+
+<body>
+<div class="container coursePage">
+    {{> user}}
+    <div class="container">
+        <h2 id="notecast" style="margin-bottom: 0px; margin-top: 30px">NotesCast</h2>
+    </div>
+    <div class="tight_text">
+        <p style="text-align:center;">Hi, {{name}}!</p>
+    </div>
+    <div id="search">
+        <input id="searchBar" type="text" placeholder="Search for your class..">
+        <a id="searchIcon" onclick="handleSearch()"><i class="fa fa-fw fa-search"></i> </a>
+    </div>
+
+
+    {{#if page}}
+        {{> pageB}}
+    {{else}}
+        {{> pageA}}
+    {{/if}}
+
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course</title>
+    <link href="/css/lecture.css" rel="stylesheet">
+
+    <![endif]-->
+    {{> header}}
+
+
+    
+</head>
+<body>
+<div class="container" style="background: #F2F7FF;margin-top: -22.5px;padding-top: 22.5px;">
+    <!-- <button class="backbutton" > Back </button>-->
+<!--    <a id="backbutton" onclick="goBack()"> < Back</a>-->
+    {{> user}}
+
+    <div id="lecture_head_box" style="margin: 0px;background: #F2F7FF;">
+        <p class="title" style="line-height: 1">{{courseName}}</p>
+        <p class="info"> Professor {{prof}} | {{quarter}}</p>
+        <p class="subtitle">{{lecture}}</p>
+    </div>
+</div><!--end of teh container-->
+
+    <div id="frame">
+        <video id="videoID" width="100%" controls>
+            <source src="/../images/mov_bbb.mp4" type="video/mp4">
+            <source src="/../images/mov_bbb.mp4" type="video/ogg">
+        </video><br>
+</div>
+
+<div class="container" >
+        <form id="addNoteForm" class="input" role="form" method="get"
+              action="/addNote/{{courseName}}/{{prof}}/{{quarter}}/{{lecture}}">
+            <input type="text" class="inputBox" placeholder="Add notes here..." name="note">
+            <input type="submit" value="Add" class="submit">
+        </form>
+
+    <h3 id="noteTitle"><i class="fa fa-gradient">&#xf017;</i> Notes</h3>
+    <hr style="margin:10px">
+    <div id="notesdiv">
+        {{#each notes}}
+            <div class="note">
+                <p id="content">{{@key}} </p><a href="javascript:void(0);">
+                <p onclick="handleResume(this)" id="timestamp">{{this}}</p></a>
+                <a href="javascript:void(0);" class="deleteNote" onclick="handleDelete(this, `{{@key}}`)">
+                    <i class="fa fa-trash"></i>
+                </a>
+                <br> </div>
+        {{/each}}
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="/js/lecture.js"></script>
+</body>
+</html>
